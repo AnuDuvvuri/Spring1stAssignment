@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.BO.BusinessLogic;
+import com.example.demo.bo.BusinessLogic;
 import com.example.demo.controller.HomeController;
 import com.example.demo.exception.CustomerNotAddedException;
 import com.example.demo.exception.CustomerNotFoundException;
@@ -111,7 +111,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public Customer addCustomer(Customer customer) throws CustomerNotAddedException {
-		 LOG.info("addCustomerDto called in service layer"); 
+		 LOG.info("addCustomer called in service layer"); 
 	
 		  CustomerDto savecustomer=customerrepository.save(customerMapper.toDto(customer));
 		  
