@@ -16,14 +16,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.exception.CustomerNotAddedException;
 import com.example.demo.exception.CustomerNotFoundException;
 import com.example.demo.exception.HealthCheckFailed;
 import com.example.demo.model.Customer;
-import com.example.demo.model.CustomerDto;
 import com.example.demo.service.CustomerServiceImpl;
 
 
@@ -35,7 +33,7 @@ public class HomeController {
 	@Autowired
 	private CustomerServiceImpl customerservice;
 	
-	//@RequestMapping("")
+	
     @GetMapping("/home")
     String home() {
         LOG.info("sending hello response");
@@ -53,7 +51,7 @@ public class HomeController {
 	}
 	
 	@PostMapping("/addcustomer")
-	public ResponseEntity addCustomer( @Validated @RequestBody Customer customer) throws CustomerNotAddedException {
+	public ResponseEntity<Customer> addCustomer( @Validated @RequestBody Customer customer) throws CustomerNotAddedException {
 		
 		LOG.info("Post mapping called for customer:"+customer.getCustomerId());
 		Customer addedCustomer=customerservice.addCustomer(customer);

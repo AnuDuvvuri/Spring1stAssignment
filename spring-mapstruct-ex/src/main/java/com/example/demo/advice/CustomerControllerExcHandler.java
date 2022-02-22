@@ -14,7 +14,7 @@ public class CustomerControllerExcHandler {
 
 	@ExceptionHandler(CustomerNotAddedException.class)
 	public ResponseEntity<String> handleCustomerNotAddedException(CustomerNotAddedException customerNotAddedException){
-		return new ResponseEntity<String>("Employee not found with given id", HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<String>("Customer not found with given id", HttpStatus.BAD_REQUEST);
 		
 	}
 	@ExceptionHandler(CustomerNotFoundException.class)

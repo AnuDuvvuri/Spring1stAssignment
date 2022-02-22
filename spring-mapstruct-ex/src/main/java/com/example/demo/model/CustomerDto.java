@@ -12,9 +12,13 @@ public class CustomerDto {
 	public CustomerDto() {
 		// TODO Auto-generated constructor stub
 	}
-	public CustomerDto(int i, String string) {
-		// TODO Auto-generated constructor stub
+	
+	public CustomerDto(int customerId, String customerName) {
+		//super();
+		this.customerId = customerId;
+		this.customerName = customerName;
 	}
+
 	public int getCustomerId() {
 		return customerId;
 	}
